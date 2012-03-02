@@ -1,0 +1,25 @@
+<%= form_for(@dealership) do |f| %>
+  <% if @dealership.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dealership.errors.count, "error") %> prohibited this car_dealership from being saved:</h2>
+
+      <ul>
+      <% @dealership.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dealership %><br />
+    <%= f.text_field :dealership %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_numbers %><br />
+    <%= f.text_field :contact_numbers %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
